@@ -21,7 +21,7 @@ public class Checkout {
     public int total() {
         return availableProducts
                 .stream()
-                .mapToInt(pp -> pp.calculatePrice(Collections.frequency(products, pp.getProduct())))
+                .mapToInt(pp -> pp.calculatePrice(Collections.frequency(products, pp.product())))
                 .sum();
     }
 }

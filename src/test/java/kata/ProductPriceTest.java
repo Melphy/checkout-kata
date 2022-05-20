@@ -16,6 +16,7 @@ class ProductPriceTest {
 
         assertThat(total).isEqualTo(5);
     }
+
     @Test
     void calculatePriceForTwoProducts() {
         ProductPrice productA = new ProductPrice(ANY_PRODUCT, 5);
@@ -27,7 +28,7 @@ class ProductPriceTest {
 
     @Test
     void calculateSpecialPrice() {
-        ProductPrice productA = new ProductPrice(ANY_PRODUCT, 50, new SpecialPrice(3,130));
+        ProductPrice productA = new ProductPrice(ANY_PRODUCT, 50, new SpecialPrice(3, 130));
 
         int total = productA.calculatePrice(3);
 
@@ -36,15 +37,16 @@ class ProductPriceTest {
 
     @Test
     void calculateSpecialAndExtra() {
-        ProductPrice productA = new ProductPrice(ANY_PRODUCT, 50, new SpecialPrice(3,130));
+        ProductPrice productA = new ProductPrice(ANY_PRODUCT, 50, new SpecialPrice(3, 130));
 
         int total = productA.calculatePrice(4);
 
         assertThat(total).isEqualTo(180);
     }
+
     @Test
     void calculateMultipleSpecialAndExtra() {
-        ProductPrice productA = new ProductPrice(ANY_PRODUCT, 50, new SpecialPrice(3,130));
+        ProductPrice productA = new ProductPrice(ANY_PRODUCT, 50, new SpecialPrice(3, 130));
 
         int total = productA.calculatePrice(7);
 

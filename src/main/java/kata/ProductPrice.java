@@ -1,7 +1,5 @@
 package kata;
 
-import java.util.Optional;
-
 public class ProductPrice {
 
     private final String product;
@@ -10,7 +8,7 @@ public class ProductPrice {
     private final SpecialPrice specialPrice;
 
     public ProductPrice(String product, int price) {
-        this(product, price, null);
+        this(product, price, new SpecialPrice(Integer.MAX_VALUE, Integer.MAX_VALUE));
     }
 
     public ProductPrice(String product, int price, SpecialPrice specialPrice) {
@@ -24,10 +22,7 @@ public class ProductPrice {
     }
 
     public int calculatePrice(int quantity) {
-        if (specialPrice != null) {
-            int specialAmount = quantity / specialPrice.quantity();
-            return specialAmount * specialPrice.price() + (quantity - specialAmount * specialPrice.quantity()) * price;
-        }
-        return quantity * price;
+        int specialAmount = quantity / specialPrice.quantity();
+        return specialAmount * specialPrice.price() + (quantity - specialAmount * specialPrice.quantity()) * price;
     }
 }

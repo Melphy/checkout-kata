@@ -20,7 +20,7 @@ public class Checkout {
                         .filter(pp -> pp.getProduct().equals(product))
                         .findFirst()
                         .get()
-                        .calculatePrice(1)) //HardCodedOne :( 
+                        .calculatePrice(1)) //HardCodedOne :(
                 .sum();
     }
 }

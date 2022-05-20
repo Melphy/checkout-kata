@@ -7,12 +7,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductPriceTest {
 
+    public static final String ANY_PRODUCT = "A";
+
     @Test
-    void calculatePrice() {
-        ProductPrice productA = new ProductPrice("A", 5);
+    void calculatePriceForOne() {
+        ProductPrice productA = new ProductPrice(ANY_PRODUCT, 5);
 
         int total = productA.calculatePrice(1);
 
         assertThat(total).isEqualTo(5);
+    }
+    @Test
+    void calculatePriceForTwoProducts() {
+        ProductPrice productA = new ProductPrice(ANY_PRODUCT, 5);
+
+        int total = productA.calculatePrice(2);
+
+        assertThat(total).isEqualTo(10);
     }
 }

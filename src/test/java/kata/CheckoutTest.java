@@ -37,4 +37,22 @@ class CheckoutTest {
         int total = shoppingCart.total();
         assertThat(total).isEqualTo(130);
     }
+
+    @Test
+    void checkout_alternatingItems_SpecialPriceIsApplied(){
+        Checkout shoppingCart = new Checkout();
+        shoppingCart.add("A","B","A","B","A");
+
+        int total = shoppingCart.total();
+        assertThat(total).isEqualTo(175);
+    }
+
+    @Test
+    void checkout_mixedShoppingCart_calculatedCorrectly(){
+        Checkout shoppingCart = new Checkout();
+        shoppingCart.add("A","B","A","B","A","C","A");
+
+        int total = shoppingCart.total();
+        assertThat(total).isEqualTo(245);
+    }
 }

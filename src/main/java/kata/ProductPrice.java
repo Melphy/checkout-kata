@@ -4,7 +4,6 @@ public class ProductPrice {
 
     private final String product;
     private final int price;
-
     private final SpecialPrice specialPrice;
 
     public ProductPrice(String product, int price) {

@@ -1,7 +1,5 @@
 package kata;
 
-public class SpecialPrice {
+public record SpecialPrice(int quantity, int price) {
 
-    public SpecialPrice(int count, int amount) {
-    }
 }

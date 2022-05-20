@@ -3,7 +3,6 @@ package kata;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class ProductPriceTest {
 
@@ -24,5 +23,14 @@ class ProductPriceTest {
         int total = productA.calculatePrice(2);
 
         assertThat(total).isEqualTo(10);
+    }
+
+    @Test
+    void calculateSpecialPrice() {
+        ProductPrice productA = new ProductPrice(ANY_PRODUCT, 50, new SpecialPrice(3,130));
+
+        int total = productA.calculatePrice(3);
+
+        assertThat(total).isEqualTo(130);
     }
 }
